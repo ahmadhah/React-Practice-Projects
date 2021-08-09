@@ -1,23 +1,47 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react'
+import Tourist from './components/Tourist'
+import Loading from './components/Loader/Loading'
 
 function App() {
+
+  const [data, setdata] = useState([])
+  const [loading, setloading] = useState(true)
+
+  const remove = (id)=> {
+    const newData = data.filter((tour)=>tour.id!=id)
+    setdata(newData)
+  }
+
+  async function ApiFetching() {
+    try {
+      const url = 'https://course-api.com/react-tours-project'
+      const result = await fetch(url)
+      const dataO = await result.json()
+      setdata(dataO)
+      console.log(data)
+    }
+    catch (err) {
+      alert('error', err)
+    }
+    finally {
+      setloading(false)
+    }
+  }
+
+  useEffect(() => {
+    ApiFetching()
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {loading ? <Loading /> : <Tourist data={data} remove = {remove} />
+      }
+
+      {data.length == 0 ? <button type="button" className="btn btn-info" onClick={() => {
+        setloading(true);
+        ApiFetching()
+      }}>Refresh</button> : ''}
     </div>
   );
 }
