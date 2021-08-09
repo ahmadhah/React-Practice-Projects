@@ -1,0 +1,20 @@
+.container{
+    background-color: aquamarine;
+    width: 70%;
+    height: auto;
+    padding:15px;
+    margin:30px auto;
+    margin-bottom: 30px;
+    max-width: 536px;
+    max-height: 800px;
+    overflow: scroll;
+    /* margin: 100px;     */
+}
+img{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+.card{
+    margin: 0 auto;
+}
