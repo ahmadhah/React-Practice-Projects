@@ -1,0 +1,35 @@
+.btn{
+    display: inline
+}
+
+.fa-angle-left:before {
+    content: "\f104";
+    font-size: xx-large; margin-right:10px
+}
+
+.fa-angle-right{
+    font-size: xx-large;
+    margin-left: 10px;
+}
+
+.card-img-top{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin: 10px auto;
+    object-fit: cover;
+
+}
+p{
+    text-align:center;
+}
+#job{
+    color:  #49a6e9;
+    max-width: 150px;
+    margin: 0 auto;
+}
+.btn{
+    display: block;
+    margin: 15px auto;
+    width: 50%;
+}
