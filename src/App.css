@@ -6,12 +6,25 @@
   height: 40vmin;
   pointer-events: none;
 }
+hr{
+  width: 200px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+.menu{
+  margin-top:70px
+}
+.list{
+  margin: 90px;
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+}
+
 
 .App-header {
   background-color: #282c34;
