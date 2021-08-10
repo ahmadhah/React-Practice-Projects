@@ -1,0 +1,15 @@
+.question{
+    color: black;
+    display: inline;
+    text-align:right;
+
+}
+.list{
+    background-color:gainsboro;
+    border-color:black;
+    height:auto;
+    margin:0 auto;
+}
+button{
+    display: inline;
+}
