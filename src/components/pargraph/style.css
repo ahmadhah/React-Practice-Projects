@@ -1,0 +1,14 @@
+#para{
+    color:black;
+    background-color:aqua;
+    margin: 10px;
+    padding: 10px;
+}
+
+.Paragraph{
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+    background-color:cadetblue;
+    padding:10px;
+}

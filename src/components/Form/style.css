@@ -1,0 +1,21 @@
+.input{
+    max-width: 200px;
+    
+
+}
+
+.error{
+    border-color: red;
+    border: 5px solid red;
+}
+.parag{
+    color: red;
+    font-weight: 500;
+    margin-left: center;
+}
+form{
+    margin-left: 37%;
+    margin-top: 70px;
+    margin-bottom: 40px;
+
+}
