@@ -13,6 +13,23 @@
   }
 }
 
+table{
+  width: 1300px;
+  height: 750%;
+}
+
+.btn-list{
+  width:30%;
+  text-align:right;
+}
+
+.list{
+  margin-top:300px;
+  margin-left: 0px;
+  text-align: left;
+  padding-left: 5%;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
