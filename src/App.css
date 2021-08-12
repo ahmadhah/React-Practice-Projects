@@ -24,11 +24,29 @@
   color: white;
 }
 
+.bi{
+  background-color:black;
+}
+.inl:hover{
+  background-color:greenyellow;
+  cursor: pointer;
 
+}
+.inl{
+ float: right;
+  padding: 5px;
+  margin-bottom: 3px;
 
+}
 .input{
   padding: 4px;
   margin: 30px;
+}
+
+.list-group-item{
+  width: 400px;
+  text-align: left;
+  margin: 0 auto;
 }
 .title{
   margin:120px auto;
