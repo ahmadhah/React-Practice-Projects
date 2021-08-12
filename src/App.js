@@ -5,20 +5,20 @@ import List from './List';
 function App() {
   const [text, settext] = useState('');
   const [list, setList] = useState([]);
+  const [iseddited, setiseddited] = useState(false);
   const [editing, setediting] = useState(false);
   const [idd, setidd] = useState('');
 
   function handleSubmit(e) {
-    {
-      console.log('handle submit func');
-      e.preventDefault();
+    e.preventDefault();
+    if(iseddited!=true && text!='') {
       const newItem = { id: new Date().getTime().toString(), title: text };
       setList([...list, newItem]);
       settext('');
-    }
+    }else setiseddited(false)
   }
   function editi() {
-    console.log('editi')
+    if(text!=''){
     setList(
       list.map((item) => {
         if (item.id === idd) {
@@ -26,8 +26,10 @@ function App() {
         }
         return item;
       })
-    );
+    );}
     setediting(false);
+    setiseddited(true);
+    settext('')
   }
   function edit(id) {
     
@@ -35,7 +37,6 @@ function App() {
     const spe = list.find((item) => item.id === id);
     settext(spe.title)
     setidd(spe.id)
-
 
   }
   function delet(id) {
