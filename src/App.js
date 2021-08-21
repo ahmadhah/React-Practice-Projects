@@ -1,20 +1,34 @@
-import './App.css';
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Route, Switch } from "react-router-dom"
-import Home from "./components/pages"
-import Navbar from "./components/Navbar"
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Speakers from "./components/pages/Speakers"
-function App() {
+import React, { useState } from 'react';
+import Header from './components/Header'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Home from './components/Home'
+import Profile from './components/Profile'
+import About from './components/About'
+import Notfound from './components/Notfound'
+import Post from './components/Post'
+
+const App = () => {
+  const [login, setlogin] = useState(false);
+
   return (
-    <>
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/speakers" component={Speakers} />
-      </Switch>
-    </>
-  );
+    <div className="container">
+      <BrowserRouter  >
+
+        <Header />
+        <button onClick={() => setlogin(!login)}>{login ? 'log out' : 'login'}</button>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" exact component={About} />
+          <Route path="/Profile" >
+            <Profile login={login} />
+          </Route>
+          {/* using id with our post age */}
+          <Route path="/post/:id" component={Post} />
+          <Route component={Notfound} />
+        </Switch>
+      </BrowserRouter>
+    </div>
+  )
 }
 
-export default App;
+export default App

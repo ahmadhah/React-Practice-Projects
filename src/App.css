@@ -1,10 +1,4 @@
-.home{
-  /* background-image: url(./img/Screenshot_3.png) ; */
-  /* background-repeat: no-repeat; */
-  background-color: antiquewhite;
-  padding: 50px;
-  height: 700px;
-  width: 700px;
-  margin:20px auto;
+.container{
   text-align: center;
+  width: 100%;
 }

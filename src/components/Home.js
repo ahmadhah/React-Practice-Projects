@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Speakers() {
+const Home = () => {
     return (
         <div>
-            <h1>Speakers</h1>
+            <h1>Home Page</h1>
         </div>
     )
 }
 
-export default Speakers
+export default Home
