@@ -1,7 +1,11 @@
-const counterReducer = (state = 1, action) => {
+import { INCREMENT } from "../constants";
+const initialState = 1;
+
+const counterReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "INCREMENT":
-            return state + 1;
+        case INCREMENT:
+            const newState = state + 1;
+            return newState;
         case "DECREMENT":
             return state - 1;
         case "RESET":
