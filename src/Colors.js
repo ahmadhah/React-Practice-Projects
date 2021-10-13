@@ -10,3 +10,10 @@ const AppTheme = {
 }
 
 export default AppTheme;
+
+
+// //* method-1
+// AppTheme.light
+
+// //* method-2
+// AppTheme['dark']

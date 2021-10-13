@@ -7,6 +7,7 @@ const headerStyles = {
     justifyContent: "space-between",
     alignItems: "center"
 }
+
 const Header = () => {
     return (
         <header style={headerStyles}>
