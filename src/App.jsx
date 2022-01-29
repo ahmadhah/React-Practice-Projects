@@ -1,5 +1,12 @@
+import Home from './pages/Home';
+import Navbar from './pages/Navbar';
 const App = () => {
-  return <div>Hello world!</div>;
+  return (
+    <div>
+      <Home />
+      <Navbar />
+    </div>
+  );
 };
 
 export default App;
