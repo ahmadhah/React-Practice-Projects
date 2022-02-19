@@ -6,27 +6,27 @@ function Header() {
         <Nav>
             <Logo src="/images/logo.svg" />
             <NavMenu>
-                <a >
+                <a href="#foo">
                     <img src="/images/home-icon.svg" alt="home-icon" />
                     <span>Home</span>
                 </a>
-                <a >
+                <a href="#foo">
                     <img src="/images/search-icon.svg" alt="search-icon" />
                     <span>SEARCH</span>
                 </a>
-                <a >
+                <a href="#foo">
                     <img src="/images/watchlist-icon.svg" alt="watchlist" />
                     <span>WATCHLIST</span>
                 </a>
-                <a >
+                <a href="#foo">
                     <img src="/images/original-icon.svg" alt="orignal-icon" />
                     <span>ORIGNAL</span>
                 </a>
-                <a >
+                <a href="#foo">
                     <img src="/images/movie-icon.svg" alt="movies" />
                     <span>MOVIES</span>
                 </a>
-                <a >
+                <a href="#foo">
                     <img src="/images/series-icon.svg" alt="series" />
                     <span>SERIES</span>
                 </a>
@@ -45,6 +45,7 @@ const Nav = styled.nav`
     display: flex;
     align-items: center;
     padding: 0 36px;
+    overflow-x: hidden;
 
 `
 const Logo = styled.img`
@@ -61,6 +62,8 @@ const NavMenu = styled.div`
         align-items: center;
         padding: 0 12px;
         cursor:pointer;
+        color: #fff;
+        text-decoration: none;
 
         img{
             height: 20px;
@@ -70,7 +73,6 @@ const NavMenu = styled.div`
             font-size: 13px;
             letter-spacing: 1.42px;
             position: relative;
-            // this after behaves like a div
 
             &:after{
                 content: '';

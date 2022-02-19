@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Home from './components/Home';
-import { Counter } from './features/counter/Counter';
+// import { Counter } from './features/counter/Counter';
 import './App.css';
 
 function App() {
@@ -14,3 +14,4 @@ function App() {
 }
 
 export default App;
+
