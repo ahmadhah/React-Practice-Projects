@@ -20,7 +20,7 @@ function App() {
         {/* header will be display on every route */}
         <Header />
         <Switch>
-          <Route path="/detail">
+          <Route path="/detail/:id">
             <Detail />
           </Route>
           <Route path="/login">

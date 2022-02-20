@@ -1,39 +1,46 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
+import { useParams } from 'react-router-dom'
+import movies from '../data'
 
 function Detail() {
+
+    const { id } = useParams()
+    const movie = movies.find(movie => movie.id === parseInt(id))
+
     return (
         <Container>
-            <Background>
-                <img src="https://png.pngtree.com/background/20210712/original/pngtree-modern-double-color-futuristic-neon-background-picture-image_1181573.jpg" alt="" />
-            </Background>
-            <ImageTitle>
-                <img src="/images/logo.png" alt="" />
-            </ImageTitle>
-            <Controls>
-                <PlayButton>
-                    <img src="/images/play-icon-black.png" alt="" />
-                    <span>PLAY</span>
-                </PlayButton>
-                <TrailerButton>
-                    <img src="/images/play-icon-white.png" alt="" />
-                    <span>Trailer</span>
-                </TrailerButton>
-                <AddButton>
-                    <span>+</span>
-                </AddButton>
-                <GroupWatchButton>
-                    <img src="images/group-icon.png" alt="" />
-                </GroupWatchButton>
-            </Controls>
-            <SubTitle>
-                2018 . 7m . Faimly, Kids, Animation
-            </SubTitle>
-            <Description>
-                A chinese mom sad when her grown son leaves
-                A chinese mom sad when her grown son leaves
-                A chinese mom sad when her grown son leaves
-            </Description>
+            {movie && (
+                <>
+                    <Background>
+                        <img src={movie.backgroundImg} alt="" />
+                    </Background>
+                    <ImageTitle>
+                        <img src={movie.titleImg} alt="" />
+                    </ImageTitle>
+                    <Controls>
+                        <PlayButton>
+                            <img src="/images/play-icon-black.png" alt="" />
+                            <span>PLAY</span>
+                        </PlayButton>
+                        <TrailerButton>
+                            <img src="/images/play-icon-white.png" alt="" />
+                            <span>Trailer</span>
+                        </TrailerButton>
+                        <AddButton>
+                            <span>+</span>
+                        </AddButton>
+                        <GroupWatchButton>
+                            <img src="images/group-icon.png" alt="" />
+                        </GroupWatchButton>
+                    </Controls>
+                    <SubTitle>
+                        {movie.subTitle}
+                    </SubTitle>
+                    <Description>
+                        {movie.description}
+                    </Description>
+                </>)}
         </Container>
     )
 }
