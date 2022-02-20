@@ -1,10 +1,16 @@
-import React from 'react'
 import styled from 'styled-components'
 import ImageSlider from './ImageSlider'
 import Viewers from './Viewers'
 import Movies from './Movies'
+import movies from '../data'
+import { useDispatch, useSelector } from 'react-redux'
+import { setMovies } from '../features/movie/movieSlice'
 
 function Home() {
+
+    const dispatch = useDispatch()
+    dispatch(setMovies(movies))
+
     return (
         <Container>
             <ImageSlider />
