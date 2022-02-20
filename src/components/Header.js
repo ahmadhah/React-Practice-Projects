@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 function Header() {
     return (
@@ -31,7 +32,9 @@ function Header() {
                     <span>SERIES</span>
                 </a>
             </NavMenu>
-            <UserImg src="https://lh3.googleusercontent.com/ogw/ADea4I65TJ-BkNEV5D6Ad-4BkRrppNksT84y68m4z1T1gQ=s64-c-mo" />
+            <Link to={`/login`}>
+                <UserImg src="https://lh3.googleusercontent.com/ogw/ADea4I65TJ-BkNEV5D6Ad-4BkRrppNksT84y68m4z1T1gQ=s64-c-mo" />
+            </Link>
         </Nav>
     )
 }
