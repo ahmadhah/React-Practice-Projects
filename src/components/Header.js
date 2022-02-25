@@ -1,46 +1,120 @@
-import React from 'react'
+import { useEffect } from 'react';
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { selectUserName, selectUserPhoto, setUserLogin } from '../features/user/userSlice'
+import { useSelector, useDispatch } from 'react-redux'
+import { auth, provider, signInWithPopup } from '../firebase'
+import { useHistory } from 'react-router-dom'
+import { getAuth, signOut } from "firebase/auth";
 
 function Header() {
+    const userName = useSelector(selectUserName)
+    const userPhoto = useSelector(selectUserPhoto)
+    const dispatch = useDispatch()
+    const history = useHistory()
+
+    useEffect(() => {
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                dispatch(setUserLogin({ name: user.displayName, email: user.email, photo: user.photoURL }))
+            }
+        })
+    }, []);
+
+    const signIn = () => {
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                let user = result.user;
+                dispatch(setUserLogin({
+                    name: user.displayName,
+                    email: user.email,
+                    photo: user.photoURL
+                }))
+                console.log(result.user.displayName)
+
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
+    const signOutf = () => {
+
+        const auth = getAuth();
+        signOut(auth).then(() => {
+            dispatch(setUserLogin({
+                name: null,
+                email: null,
+                photo: null
+            }))
+            history.push('/login')
+            alert('Signed Out')
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+
     return (
         <Nav>
             <Logo src="/images/logo.svg" />
-            <NavMenu>
-                <a href="#foo">
-                    <img src="/images/home-icon.svg" alt="home-icon" />
-                    <span>Home</span>
-                </a>
-                <a href="#foo">
-                    <img src="/images/search-icon.svg" alt="search-icon" />
-                    <span>SEARCH</span>
-                </a>
-                <a href="#foo">
-                    <img src="/images/watchlist-icon.svg" alt="watchlist" />
-                    <span>WATCHLIST</span>
-                </a>
-                <a href="#foo">
-                    <img src="/images/original-icon.svg" alt="orignal-icon" />
-                    <span>ORIGNAL</span>
-                </a>
-                <a href="#foo">
-                    <img src="/images/movie-icon.svg" alt="movies" />
-                    <span>MOVIES</span>
-                </a>
-                <a href="#foo">
-                    <img src="/images/series-icon.svg" alt="series" />
-                    <span>SERIES</span>
-                </a>
-            </NavMenu>
-            <Link to={`/login`}>
-                <UserImg src="https://lh3.googleusercontent.com/ogw/ADea4I65TJ-BkNEV5D6Ad-4BkRrppNksT84y68m4z1T1gQ=s64-c-mo" />
-            </Link>
+            {
+                !userName ? (
+                    <LoginContainer>
+                        <Login onClick={signIn}>Login</Login>
+                    </LoginContainer>
+                ) :
+                    <>
+                        <NavMenu>
+                            <a href="#foo">
+                                <img src="/images/home-icon.svg" alt="home-icon" />
+                                <span>Home</span>
+                            </a>
+                            <a href="#foo">
+                                <img src="/images/search-icon.svg" alt="search-icon" />
+                                <span>SEARCH</span>
+                            </a>
+                            <a href="#foo">
+                                <img src="/images/watchlist-icon.svg" alt="watchlist" />
+                                <span>WATCHLIST</span>
+                            </a>
+                            <a href="#foo">
+                                <img src="/images/original-icon.svg" alt="orignal-icon" />
+                                <span>ORIGNAL</span>
+                            </a>
+                            <a href="#foo">
+                                <img src="/images/movie-icon.svg" alt="movies" />
+                                <span>MOVIES</span>
+                            </a>
+                            <a href="#foo">
+                                <img src="/images/series-icon.svg" alt="series" />
+                                <span>SERIES</span>
+                            </a>
+                        </NavMenu>
+                        <UserImg onClick={signOutf} src={userPhoto} />
+                    </>
+            }
+
         </Nav>
     )
 }
 
 export default Header
 
+const Login = styled.div`
+    border: 1px solid #f9f9f9;
+    padding: 8px 16px;
+    border-radius: 4px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background-color:(0,0,0,0.6)
+    transition: all 0.2s ease 0s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #f9f9f9;
+        color:black;
+        border-color: transparent;
+    }
+`
 
 const Nav = styled.nav`
     height: 70px;
@@ -105,4 +179,10 @@ const UserImg = styled.img`
     height: 48px;
     border-radius: 50%;
     cursor: pointer;
+`
+
+const LoginContainer = styled.div`
+flex:1;
+display: flex;
+justify-content: flex-end;
 `

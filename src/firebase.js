@@ -2,6 +2,7 @@ import { getStorage } from "firebase/storage";
 import { getFirestore } from "@firebase/firestore";
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
 const firebaseConfig = {
     apiKey: "AIzaSyAwKYPz4VFjzy6iO9KGjLTjTlejvb3O5x0",
     authDomain: "disney-clone-d94ba.firebaseapp.com",
@@ -20,22 +21,6 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const storage = getStorage(app);
 
-export const signInWithGoogle = () => {
-    signInWithPopup(auth, provider)
-        .then((result) => {
-            const name = result.user.displayName;
-            const email = result.user.email;
-            const profilePic = result.user.photoURL;
-
-            localStorage.setItem("name", name);
-            localStorage.setItem("email", email);
-            localStorage.setItem("profilePic", profilePic);
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-};
-
-export { db, auth, provider, storage };
+export { db, auth, provider, storage, signInWithPopup };
 
 

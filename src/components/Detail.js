@@ -1,12 +1,23 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useParams } from 'react-router-dom'
-import movies from '../data'
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase";
 
 function Detail() {
 
     const { id } = useParams()
-    const movie = movies.find(movie => movie.id === parseInt(id))
+    const [movie, setMovie] = useState();
+
+    useEffect(() => {
+        async function getData() {
+            const docRef = doc(db, "movies", id);
+            const docSnap = await getDoc(docRef);
+
+            docSnap.exists() && setMovie(docSnap.data())
+        }
+        getData();
+    }, []);
 
     return (
         <Container>
