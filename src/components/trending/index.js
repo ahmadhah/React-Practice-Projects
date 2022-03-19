@@ -29,20 +29,20 @@ export default Trending
 const Container = styled.div`
     height: 90vh;
     margin-bottom: 10px;
-    background-color: pink;
+    // background-color: pink;
     padding:1% 10%;
     max-width: 100vw;
 `
 const TopSection = styled.div`
     height: 35%;
-    background-color: blue;
+    // background-color: blue;
     display: flex;
 
 `
 const TextSection = styled.div`
     height: 100%;
     width: 50%;
-    background-color: green;
+    // background-color: green;
     h1{
         font-size: 2.5rem;
         width: 80%;
@@ -54,7 +54,7 @@ const TextSection = styled.div`
 const ButtonGroup = styled.div`
     height: 60%;
     width: 50%;
-    background-color: yellow;
+    // background-color: yellow;
     display: flex;
     justify-content: center;
     align-items: center;

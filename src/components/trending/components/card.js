@@ -1,25 +1,26 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-function Card() {
+function Card({ price, img, name, para }) {
+
     const [heart, setHeart] = useState(false);
     const onClickHeart = () => {
         setHeart(!heart);
     }
     return (
         <CardContainer>
-            <CardImg src="/imgs/image1.png" alt="" />
+            <CardImg src={img} alt="" />
             <TextSection>
                 <PriceSection>
-                    <h3>$229,000</h3>
-                    <div heart={heart.toString()}>
-                        {heart ? <img src="/imgs/red-heart.png" alt="" onClick={onClickHeart} />
-                            : <img src="/imgs/heart-thin.png" alt="" onClick={onClickHeart} />}
+                    <h3>{price}</h3>
+                    <div onClick={onClickHeart} >
+                        {heart ? <img src={"/imgs/red-heart.png"} alt="" />
+                            : <img src="/imgs/heart-thin.png" alt="" />}
 
                     </div>
                 </PriceSection>
-                <h4>Langes Beach House</h4>
-                <p >Co Rd Tribune Tribune</p>
+                <h4>{name}</h4>
+                <p >{para}</p>
                 <div ><img src="/imgs/icon.png" alt="" ></img></div>
                 <button >View Details</button>
             </TextSection>
@@ -32,9 +33,10 @@ export default Card
 const CardContainer = styled.div`
     height:40%;
     width:42%;
-    background-color: green;
+    // background-color: green;
     padding:10px;
     display:flex;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 `
 const CardImg = styled.img`
@@ -45,7 +47,7 @@ const CardImg = styled.img`
 const TextSection = styled.div`
     width:60%;
     height:100%;
-    background-color: yellow;
+    // background-color: yellow;
     padding-left:10px;
     h4{
         margin:0;
@@ -78,16 +80,16 @@ const PriceSection = styled.div`
         display:flex;
         justify-content:center;
         align-items:center;
-        height:20px;
+        height:15px;
         padding:5px;
-        width:20px;
-        background-color:#FFD9D9;
-        // background-color:${props => props.heart === 'true' ? '#FFD9D9' : 'white'};
-        border-radius:5%;
+        width:15px;
+        background-color:#FFF2F2;
+        border: 2px solid #FFD9D9;
+        cursor:pointer;
         &:hover {
-            transform: scale(1.05);
-            transition: all 0.5s ease-in-out;
+            transform: scale(1.04);
         }
+        border-radius:5%;
         img{
             height:100%;
             width:100%;

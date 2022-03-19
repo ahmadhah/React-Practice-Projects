@@ -3,6 +3,10 @@ import Navbar from './components/navbar';
 import Header from './components/hero-section/index';
 import Services from './components/Services';
 import Trending from './components/trending/index';
+import Testimonial from './components/Testimonial'
+import Search from './components/Search';
+import Footer from './components/Footer';
+
 function App() {
   return (
     <Conainer>
@@ -10,6 +14,9 @@ function App() {
       <Header />
       <Services />
       <Trending />
+      <Testimonial />
+      <Search />
+      <Footer />
     </Conainer>
   );
 }
