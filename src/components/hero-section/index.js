@@ -30,7 +30,7 @@ const Outer = styled.div`
     max-width: 100vw;
     display: flex;
     flex-direction: column;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
 `
 
 const InnerContainer = styled.div`
@@ -51,7 +51,6 @@ const Container1 = styled.div`
     p{
         width: 52%;
         margin: 0 auto;
-        color: grey;
         font-size: 0.9rem;
     }
 `

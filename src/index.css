@@ -4,3 +4,6 @@ body {
   display: block;
   font-family: "Inter", sans-serif;
 }
+p {
+  color: gray;
+}

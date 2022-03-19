@@ -44,7 +44,6 @@ const AddressContainer = styled.div`
             margin: 5px 0;
         }
         p{
-            color:grey;
             font-size: 0.7rem;
             width: 100%;
             margin: 0;
