@@ -27,6 +27,8 @@ const Container = styled.div`
     max-width: 100vw;
     display: flex;
     align-items: center;
+    position:relative;
+    margin-bottom: 50px;
 `
 const Logo = styled.div`
     margin-left: 5%
@@ -35,15 +37,14 @@ const NavLinks = styled.div`
     height: 50%;
     display: flex;
     align-items: center;
-    margin-left: 30%;
+    margin: 0 auto;
 `
 const Link = styled.a`
     text-decoration: none;
     color: black;
-    font-size:20px;
     padding: 10px 20px;
     cursor: pointer;
-    font-family: 'Roboto';
+
     text-transform:capitalize;
     &:hover {
         color: blue;
@@ -53,7 +54,8 @@ const Link = styled.a`
 const ButttonGroup = styled.div`
     display: flex;
     height: 50%;
-    margin-left: 5%;
+    position: absolute;
+    right: 5%;
 `
 
 const Button = styled.button`
@@ -62,14 +64,14 @@ const Button = styled.button`
     background-color:${props => props.primary ? '#2289FF' : 'white'};
     font-size: 1rem;
     color: ${props => props.primary ? 'white' : '#2289FF'};
-    border: 2px solid ${props => props.primary ? 'white' : '#2289FF'};
+    border: 1px solid ${props => props.primary ? 'blue' : '#2289FF'};
     border-radius: 5px;
     cursor: pointer;
     margin: 0 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     &:hover {
-        background-color: ${props => props.primary ? 'white' : '#2289FF'};
-        color: ${props => props.primary ? '#2289FF' : 'white'};
+        
         transition: all 0.2s ease-in-out;
-        transform: translateY(-3px);
+        transform: scale(1.1);
     }
 `
