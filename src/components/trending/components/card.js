@@ -37,6 +37,10 @@ const CardContainer = styled.div`
     padding:10px;
     display:flex;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    &:hover {
+        transform: scale(1.005);
+        transition: all 0.3s ease-in-out;
+    }
 
 `
 const CardImg = styled.img`

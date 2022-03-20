@@ -31,36 +31,41 @@ const Container = styled.div`
     margin-bottom: 50px;
 `
 const Logo = styled.div`
-    margin-left: 5%
+    margin:0 5px 0 5%;
+    width: 20%;
+    
 `
 const NavLinks = styled.div`
+    width: 50%;
     height: 50%;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     margin: 0 auto;
+    background-color: #EDEADE;
 `
 const Link = styled.a`
     text-decoration: none;
     color: black;
-    padding: 10px 20px;
+    padding: 10px 2%;
     cursor: pointer;
-
+    font-size: 16px;
     text-transform:capitalize;
     &:hover {
         color: blue;
+
     }
 `
 
 const ButttonGroup = styled.div`
     display: flex;
     height: 50%;
-    position: absolute;
-    right: 5%;
+    width: 22%;
 `
 
 const Button = styled.button`
     height: 100%;
-    width:100px;
+    width:100%;
     background-color:${props => props.primary ? '#2289FF' : 'white'};
     font-size: 1rem;
     color: ${props => props.primary ? 'white' : '#2289FF'};
@@ -70,8 +75,8 @@ const Button = styled.button`
     margin: 0 10px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     &:hover {
-        
         transition: all 0.2s ease-in-out;
-        transform: scale(1.1);
+        color: ${props => props.primary ? 'white' : 'blue'};
+        background-color:${props => props.primary ? '#7CB9E8' : '#F0F8FF'};
     }
 `

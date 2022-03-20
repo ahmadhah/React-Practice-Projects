@@ -57,11 +57,11 @@ const TextSection = styled.div`
 const ButtonSection = styled(TextSection)`
     display:flex;
     flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    padding:6% 0 0 5%;
     p{
         width:50%;
         margin-left:0 !important;
+        margin-top:0;
     }
 
     div{
