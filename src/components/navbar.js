@@ -42,7 +42,7 @@ const NavLinks = styled.div`
     align-items: center;
     justify-content: flex-end;
     margin: 0 auto;
-    background-color: #EDEADE;
+    // background-color: #EDEADE;
 `
 const Link = styled.a`
     text-decoration: none;
