@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Navbar from './components/navbar';
+import Navbarr from './components/navbar/navbar';
 import Header from './components/hero-section/index';
 import Services from './components/Services';
 import Trending from './components/trending/index';
@@ -10,13 +10,13 @@ import Footer from './components/Footer';
 function App() {
   return (
     <Conainer>
-      <Navbar />
-      <Header />
+      <Navbarr />
+      {/* <Header />
       <Services />
       <Trending />
       <Testimonial />
       <Search />
-      <Footer />
+      <Footer /> */}
     </Conainer>
   );
 }

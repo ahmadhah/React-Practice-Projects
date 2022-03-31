@@ -87,7 +87,7 @@ const LinksSection = styled.div`
             // padding:10px;
             line-height:25px;
             text-decoration:none;
-            color:grey;
+            color:black !important;
             font-size:0.8rem;
             cursor:pointer;
             &:hover{
