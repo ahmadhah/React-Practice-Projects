@@ -18,8 +18,8 @@ const CardContainer = styled.div`
     position: absolute;
     right: 30%;
     top: 45%;
-    height: 220px;
-    width: 210px;
+    height: auto;
+    width: auto;
     background-color: white;
     padding: 15px;
     border-radius: 5px;

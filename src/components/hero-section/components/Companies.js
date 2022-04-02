@@ -27,6 +27,28 @@ const Companies = () => {
 
 export default Companies
 
+const CompaniesContainer = styled.div`
+height:30%;
+    width:100%;
+    max-width:100vw;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    background-color:white;
+    @media(max-width: 700px){
+        height:70%;
+    }
+`
+const Company = styled.div`
+    height:100%;
+    img{
+        height:100%;
+        object-fit:contain;
+    }
+    @media(max-width: 700px){
+        height:50%;
+    }
+`
 const Container = styled.div`
     height:20%;
     width:100%;
@@ -35,19 +57,5 @@ const Container = styled.div`
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
-`
-const CompaniesContainer = styled.div`
-    height:30%;
-    width:100%;
-    max-width:100vw;
-    display:flex;
-    align-items:center;
-    justify-content:space-around;
-`
-const Company = styled.div`
-    height:100%;
-    img{
-        height:100%;
-        object-fit:contain;
-    }
+
 `

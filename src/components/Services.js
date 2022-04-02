@@ -40,17 +40,17 @@ const Container = styled.div`
         text-align: center;
         font-size: 2.5rem;
     }
-`
-const CardContainer = styled.div`
-    height: 70%;
-    // background-color: blue;
-    margin-top: 80px;
-    display: flex;
-    justify-content: space-around;
+    @media(max-width: 700px){
+        height: auto;
+        h1{
+            font-size: 1.8rem;
+            
+        }
+    }
 `
 
 const Card = styled.div`
-    height: 100%;
+    max-height: 100%;
     // background-color: yellow;
     width: 23%;
     text-align: center;
@@ -73,9 +73,38 @@ const Card = styled.div`
     h2{
         font-size: 1.5rem;
         font-weight: 600;
+        padding:5px;
     }
     &:hover {
         transform: scale(1.05);
     }
     cursor: pointer;
+
+    @media(max-width: 700px){
+        width: 85%;
+        height: auto;
+        margin: 10px auto;
+        img{
+            height: 30%;
+            width: 30%;
+        }
+        p{
+            width: 100%;
+            padding: 5px;
+        }
+        h2{
+            font-size: 1.2rem;
+        }
+    }
 `
+const CardContainer = styled.div`
+            height: auto;
+            // background-color: blue;
+            margin-top: 80px;
+            display: flex;
+            justify-content: space-around;
+            @media (max-width: 700px) {
+                flex-direction: column;
+                margin-top: 30px;
+            }
+        `

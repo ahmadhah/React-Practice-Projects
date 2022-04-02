@@ -7,7 +7,6 @@ function Footer() {
             <LinksSection>
                 <div>
                     <h3>Popular Searches</h3>
-
                     <a>Apartment for Rent</a>
                     <a>Apartment Low to hide</a>
                     <a> Offices for Buy</a>
@@ -62,12 +61,23 @@ const CopyrightsSection = styled.div`
         font-size:12px;
         color:#828282;
     }
+    @media(max-width: 700px){
+        margin-top:10px;
+        // background-color:black;
+        p{
+            margin: 10px;
+        }
+    }
 `
 
 const Container = styled.div`
     // background-color: skyblue;
     width:100%;
     height:40vh;
+    @media(max-width: 700px){
+        height:auto;
+        margin-top:0;
+    }
     `
 
 const LinksSection = styled.div`
@@ -94,5 +104,8 @@ const LinksSection = styled.div`
                 color:black;
             }
         }
+    }
+    @media(max-width: 700px){
+        display:none;
     }
 `

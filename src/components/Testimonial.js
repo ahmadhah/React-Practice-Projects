@@ -40,16 +40,19 @@ const ReviewSection = styled.div`
         margin:0 auto;
         object-fit: contain !important;
     }
+    @media(max-width: 700px){
+        width:60%;
+    }
 
 `
 
 const Container = styled.div`
-    height:78vh;
+    height:auto;
     width:100%;
     background-color: #F9FBFE;
-    // background-color: green;
+    
     text-align:center;
-    padding-top:50px;
+    padding:50px 0px 10px 0px;
     position:relative;
     display:flex;
     flex-direction:column;
@@ -63,6 +66,13 @@ const Container = styled.div`
         width:35%;
         z-index:2;
     }
+    @media(max-width: 700px){
+        // background-color: green;
+        height:auto;
+        p{
+            width:70%;
+        }
+    }
 `
 
 const Profile = styled.img`
@@ -74,5 +84,10 @@ const Profile = styled.img`
 const Img = styled.img`
     width:90%;
     position:absolute;
+    @media(max-width: 700px){
+        height:400px;
+        object-fit:contain;
+        top:10%;
+    }
     
 `

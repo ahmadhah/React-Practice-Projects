@@ -24,14 +24,18 @@ const Address = () => {
 export default Address
 
 const AddressContainer = styled.div`
-    width: 50%;
-    height:10%;
-    margin: 5% 0 0 24%;
+    max-width: 400px;
+    max-height:80px;
+    padding: 0 10px;
+    margin: 30px auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
+    @media(max-width: 700px){
+        background-color: #ebedf0;
+        
+    }
     
     div{
         height: 100%;
@@ -49,8 +53,8 @@ const AddressContainer = styled.div`
             margin: 0;
         }
         button{
-            height: 60%;
-            width: 70%;
+            // height: 40px;
+            // width: 120px;
             padding: 5%;
             background-color: #2289FF;
             color: white;
@@ -58,6 +62,17 @@ const AddressContainer = styled.div`
             border-radius: 5px;
             &:hover {
                 transform: scale(1.1);
+            }
+        }
+    }
+    @media(max-width: 700px){
+        max-width: 70%;
+        margin:20px auto;
+        height: auto;
+        div{
+            button{
+                
+                width:70px ;
             }
         }
     }

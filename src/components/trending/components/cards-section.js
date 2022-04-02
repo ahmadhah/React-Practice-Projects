@@ -14,11 +14,17 @@ function CardsSection() {
 export default CardsSection
 
 const CardsContainer = styled.div`
-    height: 65%;
+// background-color: black;
+    height: auto;
     width: 100%;
     // background-color: #fff;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    @media(max-width: 700px){
+        flex-direction: column;
+        margin-top:20px;
+
+    }
 `

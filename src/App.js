@@ -11,12 +11,12 @@ function App() {
   return (
     <Conainer>
       <Navbarr />
-      {/* <Header />
+      <Header />
       <Services />
       <Trending />
       <Testimonial />
       <Search />
-      <Footer /> */}
+      <Footer />
     </Conainer>
   );
 }

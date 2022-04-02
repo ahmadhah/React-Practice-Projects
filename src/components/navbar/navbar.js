@@ -7,7 +7,7 @@ import { Offcanvas, Nav } from 'react-bootstrap'
 function Navbarr() {
     return (
         <>
-            <Container1>
+            <Container1 >
                 <Navbar bg="light" expand={false}>
                     <Container style={{ display: 'flex', justifyContent: 'space-between', padding: '0 10px' }} fluid>
                         <Navbar.Brand href="#"><Logo><img src="/imgs/Logo.svg" alt="" /></Logo></Navbar.Brand>

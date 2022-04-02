@@ -27,16 +27,23 @@ function Trending() {
 export default Trending
 
 const Container = styled.div`
-    height: 90vh;
-    margin-bottom: 10px;
+    height: auto;
     // background-color: pink;
     padding:1% 10%;
     max-width: 100vw;
+    @media(max-width: 700px){
+        height: auto;
+    }
 `
 const TopSection = styled.div`
     height: 35%;
     // background-color: blue;
     display: flex;
+    margin:70px 0 ;
+    @media(max-width: 700px){
+        height: auto;
+        flex-direction: column;
+    }   
 
 `
 const TextSection = styled.div`
@@ -50,6 +57,21 @@ const TextSection = styled.div`
     p{
         width: 80%;
     }
+    @media(max-width: 700px){
+        width: 100%;
+        h1{
+            font-size: 2rem;
+            width: 100%;
+            text-align: center;
+            margin:0px;
+        }
+        p{
+            margin:20px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
 `
 const ButtonGroup = styled.div`
     height: 60%;
@@ -65,6 +87,10 @@ const ButtonGroup = styled.div`
         border-radius: 4px;
         cursor: pointer;
     }
+    @media(max-width: 700px){
+        width: 100%;
+        height: auto;
+    }
 `
 const Button = styled.button`
     padding: 10px 17px;
@@ -76,5 +102,11 @@ const Button = styled.button`
     cursor: pointer;
     &:hover {
         transform: scale(1.1);
+    }
+    @media(max-width: 700px){
+        padding: 4px; 
+        width:auto;
+        height:40px;
+        font-size:1 rem;
     }
 `

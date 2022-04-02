@@ -31,6 +31,9 @@ const Outer = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+    @media(max-width: 700px){
+        height: 55vh;
+    }
 `
 
 const InnerContainer = styled.div`
@@ -52,6 +55,21 @@ const Container1 = styled.div`
         width: 52%;
         margin: 0 auto;
         font-size: 0.9rem;
+        @media(max-width: 700px){
+            color:black !important;
+        }
+    }
+    @media (max-width:960px){
+        width: 100%;
+        h1{
+            font-size: 2rem;
+            width:70%;
+        }
+        p{
+            width: 70%;
+        }   
+            background: #ffffff url("/imgs/Iamge.png") no-repeat center top;
+            background-size: cover;
     }
 `
 const Container2 = styled(Container1)`
@@ -59,5 +77,9 @@ const Container2 = styled(Container1)`
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
+    @media (min-width: 200px ) and (max-width: 960px) {
+        display: none;
+    }
+
 `
 

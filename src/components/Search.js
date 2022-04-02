@@ -28,13 +28,20 @@ function Search() {
 export default Search
 
 const Container = styled.div`
-    margin-bottom:100px;
-    height:45vh;
-    max-width:100%;
-    background-color: #0F2A47;
-    display:flex;
+margin-bottom:100px;
+height:45vh;
+max-width:100%;
+background-color: #0F2A47;
+display:flex;
     align-items:center;
     justify-content:center;
+    @media(max-width: 700px){
+        flex-direction:column;
+        margin-top:30px;
+        margin-bottom:0;
+        height:auto;
+        padding-bottom:20px;
+    }
 `
 const TextSection = styled.div`
     width:40%;
@@ -53,6 +60,14 @@ const TextSection = styled.div`
         margin-left:5%;
         font-size:0.9rem;
     }
+    @media(max-width: 700px){
+        width: 70%;
+        text-align: center;
+        p{
+            width: 100%;
+            margin:20px;
+        }
+    }
 `
 const ButtonSection = styled(TextSection)`
     display:flex;
@@ -69,8 +84,8 @@ const ButtonSection = styled(TextSection)`
         flex-direction:row;
         justify-content:center;
         align-items:center;
-        height:35px;
-        width:50%;
+        min-height:40px;
+        width:auto;
         
         input{
             height:90%;
@@ -90,6 +105,17 @@ const ButtonSection = styled(TextSection)`
             &:hover {
                 background-color:#87CEEB;
             }
+        }
+    }
+    @media(max-width: 700px){
+        width: 100%;
+        // background-color:black;
+        p{
+            width: 100%;
+        }
+        div{
+            width: 70%;
+            margin:0 auto;
         }
     }
 `

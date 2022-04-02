@@ -31,8 +31,9 @@ function Card({ price, img, name, para }) {
 export default Card
 
 const CardContainer = styled.div`
-    height:40%;
-    width:42%;
+    min-height:190px;
+    
+    width:450px;
     // background-color: green;
     padding:10px;
     display:flex;
@@ -41,12 +42,17 @@ const CardContainer = styled.div`
         transform: scale(1.005);
         transition: all 0.3s ease-in-out;
     }
+    @media(max-width: 700px){
+        width: 100%;
+        margin:10px;
+    }
 
 `
 const CardImg = styled.img`
     height:100%;
     object-fit: contain;
     width:35%;
+
 `
 const TextSection = styled.div`
     width:60%;
@@ -84,9 +90,9 @@ const PriceSection = styled.div`
         display:flex;
         justify-content:center;
         align-items:center;
-        height:15px;
-        padding:5px;
-        width:15px;
+        height:25px;
+        width:25px;
+        padding:3px;
         background-color:#FFF2F2;
         border: 2px solid #FFD9D9;
         cursor:pointer;
@@ -98,6 +104,11 @@ const PriceSection = styled.div`
             height:100%;
             width:100%;
             
+        }
+        @media(max-width: 700px){
+            height:30px;
+            width:30px;
+
         }
     }
 
